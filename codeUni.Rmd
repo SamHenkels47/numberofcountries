@@ -1,0 +1,51 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+```{r}
+link="https://github.com/SamHenkels47/numberofcountries/raw/main/Oregoncountries.xlsx"
+
+library(rio)
+mydata=import(link)
+
+```
+```{r unique, eval=FALSE}
+# how many unique values
+length(unique(mydata$Ten))
+length(unique(mydata$Eleven))
+length(unique(mydata$Twelve))
+length(unique(mydata$Thirteen))
+length(unique(mydata$Fourteen))
+length(unique(mydata$fifteen))
+length(unique(mydata$sixteen))
+length(unique(mydata$Seventeen))
+length(unique(mydata$eighteen))
+length(unique(mydata$nineteen))
+length(unique(mydata$twenty))
+length(unique(mydata$twentyone))
+```
+
+```{r}
+ten10=table(mydata$Ten==0)
+ten11=table(mydata$Eleven==0)
+ten12=table(mydata$Twelve==0)
+ten13=table(mydata$Thirteen==0)
+ten14=table(mydata$Fourteen==0)
+ten15=table(mydata$fifteen==0)
+ten16=table(mydata$sixteen==0)
+ten17=table(mydata$Seventeen==0)
+ten18=table(mydata$eighteen==0)
+ten19=table(mydata$nineteen==0)
+ten20=table(mydata$twenty==0)
+ten21=table(mydata$twentyone==0)
+
+```
+
+```{r}
+newmatrix = rbind(ten10,ten11,ten12,ten13,ten14,ten15,ten16,ten17,ten18,ten19,ten20,ten21)
+newmatrix
+```
+
